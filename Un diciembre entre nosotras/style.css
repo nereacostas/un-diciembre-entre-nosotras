@@ -1,0 +1,3531 @@
+
+/* ==========================================
+   UN DICIEMBRE ENTRE NOSOTRAS
+   ESTILO COZY CHRISTMAS
+========================================== */
+
+:root {
+    --crema: #F5F2EB;
+    --marfil: #FAF8F4;
+    --arena: #EAE4DA;
+    --chocolate: #493127;
+    --topo: #806B5B;
+    --burdeos: #722F37;
+    --dorado: #C5A77A;
+    --verde: #435747;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--crema);
+    color: var(--chocolate);
+    font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* ==========================================
+   PORTADA
+========================================== */
+
+.portada {
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background: radial-gradient(
+        ellipse at center,
+        var(--marfil) 0%,
+        var(--crema) 75%,
+        var(--arena) 100%
+    );
+}
+
+.marco {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    min-height: 85vh;
+    min-height: 85dvh;
+    border: 1px solid var(--dorado);
+    outline: 1px solid #C5A77A55;
+    outline-offset: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 95px 30px;
+    text-align: center;
+}
+
+.marco::before,
+.marco::after {
+    content: "✧";
+    position: absolute;
+    color: var(--dorado);
+    font-size: 25px;
+}
+
+.marco::before {
+    top: 17px;
+    left: 23px;
+}
+
+.marco::after {
+    bottom: 17px;
+    right: 23px;
+}
+
+.contenido {
+    width: 100%;
+    max-width: 850px;
+    position: relative;
+    z-index: 2;
+    animation: aparecer 1.3s ease both;
+}
+
+.portada h1 {
+    font-size: clamp(44px, 7vw, 100px);
+    font-weight: 400;
+    letter-spacing: 4px;
+    line-height: 1.1;
+    color: var(--chocolate);
+}
+
+.portada h2 {
+    font-family: "Great Vibes", cursive;
+    font-size: clamp(60px, 8vw, 110px);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--topo);
+    margin-top: -8px;
+}
+
+.estrellas {
+    position: absolute;
+    top: 43px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--dorado);
+    font-size: 25px;
+    letter-spacing: 12px;
+    white-space: nowrap;
+    animation: brillo 3s ease-in-out infinite alternate;
+}
+
+.decoracion {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--dorado);
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+.adorno-corazon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 17px;
+    margin: 28px auto 14px;
+}
+
+.adorno-corazon .linea {
+    width: 48px;
+    height: 1px;
+    background: var(--dorado);
+}
+
+.adorno-corazon .corazon {
+    font-family: Georgia, serif;
+    font-size: 29px;
+    line-height: 1;
+    color: var(--burdeos);
+}
+
+.subtitulo {
+    font-size: clamp(24px, 3vw, 32px);
+    font-style: italic;
+    color: var(--topo);
+    margin: 18px 0 35px;
+}
+
+.dedicatoria-yai {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: var(--burdeos);
+    margin: -15px 0 30px;
+}
+
+#comenzar {
+    background: var(--burdeos);
+    color: var(--marfil);
+    border: 1px solid var(--burdeos);
+    border-radius: 40px;
+    padding: 15px 60px;
+    font-size: 24px;
+    letter-spacing: 3px;
+    box-shadow: 0 5px 15px #49312720;
+}
+
+#comenzar:hover {
+    background: #59252D;
+    transform: translateY(-3px);
+    box-shadow: 0 9px 22px #49312730;
+}
+
+/* ==========================================
+   RAMITAS NAVIDEÑAS
+========================================== */
+
+.rama {
+    position: absolute;
+    width: 155px;
+    height: 105px;
+    pointer-events: none;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.rama-superior {
+    top: 24px;
+    left: 28px;
+    transform: rotate(-20deg);
+}
+
+.rama-inferior {
+    bottom: 24px;
+    right: 28px;
+    transform: rotate(160deg);
+}
+
+.tallo {
+    position: absolute;
+    left: 15px;
+    top: 50px;
+    width: 125px;
+    height: 2px;
+    background: #60725C;
+    transform: rotate(-12deg);
+    transform-origin: left center;
+}
+
+.hoja {
+    position: absolute;
+    width: 43px;
+    height: 11px;
+    background: var(--verde);
+    border-radius: 100% 0 100% 0;
+    transform-origin: left center;
+}
+
+.hoja-1 { left: 25px; top: 44px; transform: rotate(-55deg); }
+.hoja-2 { left: 43px; top: 49px; transform: rotate(45deg); }
+.hoja-3 { left: 62px; top: 37px; transform: rotate(-55deg); }
+.hoja-4 { left: 79px; top: 41px; transform: rotate(45deg); }
+.hoja-5 { left: 99px; top: 29px; transform: rotate(-50deg); }
+.hoja-6 { left: 114px; top: 33px; transform: rotate(40deg); }
+
+.rama .baya {
+    display: none;
+}
+
+/* ==========================================
+   CALENDARIO DE ADVIENTO
+========================================== */
+
+.calendario {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 75px 25px;
+    text-align: center;
+    background: radial-gradient(
+        ellipse at top,
+        var(--marfil) 0%,
+        var(--crema) 75%
+    );
+    animation: aparecer 0.7s ease both;
+}
+
+.calendario[hidden] {
+    display: none !important;
+}
+
+.calendario-etiqueta {
+    color: #947B67;
+    font-size: 15px;
+    letter-spacing: 5px;
+}
+
+.calendario h2 {
+    font-size: clamp(43px, 6vw, 78px);
+    font-weight: 400;
+    color: var(--chocolate);
+    margin: 15px 0;
+}
+
+.calendario-subtitulo {
+    font-size: clamp(21px, 3vw, 27px);
+    font-style: italic;
+    color: var(--topo);
+    margin-bottom: 55px;
+}
+
+/* ==========================================
+   LOS 24 SOBRES
+========================================== */
+
+.sobres {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 950px;
+    margin: 0 auto 55px;
+}
+
+.sobre {
+    position: relative;
+    height: 145px;
+    background: #E4DDD3;
+    border: 1px solid #CFC4B8;
+    border-radius: 4px;
+    box-shadow: 0 6px 15px #49312715;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    font-family: inherit;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: transform 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+.sobre:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(73, 49, 39, 0.12);
+}
+
+.sobre:focus-visible {
+    outline: 2px solid var(--burdeos);
+    outline-offset: 5px;
+}
+
+.solapa {
+    position: absolute;
+    inset: 0;
+    background: #F0EAE1;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        50% 65%
+    );
+}
+
+.sello {
+    position: relative;
+    z-index: 2;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--burdeos);
+    color: var(--marfil);
+    font-size: 25px;
+    border: 2px solid #FFFFFF30;
+    box-shadow: 0 3px 8px #49312735;
+}
+
+.boton-volver {
+    background: transparent;
+    color: var(--burdeos);
+    border: 1px solid var(--burdeos);
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 21px;
+}
+
+.boton-volver:hover {
+    background: var(--burdeos);
+    color: var(--marfil);
+}
+
+/* ==========================================
+   VENTANA DE LAS CARTAS
+========================================== */
+
+.ventana-carta[hidden] {
+    display: none !important;
+}
+
+.ventana-carta {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.fondo-carta {
+    position: absolute;
+    inset: 0;
+    background: rgba(39, 27, 23, 0.55);
+    backdrop-filter: blur(5px);
+}
+
+.carta {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 510px;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 45px 45px 55px;
+    background: #FAF8F4;
+    border: 1px solid #C5A77A;
+    outline: 1px solid rgba(197, 167, 122, 0.5);
+    outline-offset: -12px;
+    box-shadow: 0 25px 70px rgba(30, 20, 15, 0.2);
+    text-align: center;
+    animation: aparecerCarta 0.4s ease;
+}
+
+.cerrar-carta {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    border: none;
+    background: transparent;
+    color: #806B5B;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.cerrar-carta:hover {
+    color: var(--burdeos);
+}
+
+.carta-etiqueta {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #947B67;
+    margin-bottom: 22px;
+}
+
+.carta-corazon {
+    color: var(--burdeos);
+    font-size: 29px;
+    margin-bottom: 18px;
+}
+
+.carta-titulo {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: clamp(34px, 6vw, 46px);
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--chocolate);
+    margin: 12px 0 25px;
+}
+
+.carta-texto {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 23px;
+    line-height: 1.65;
+    color: #665247;
+    white-space: pre-line;
+}
+
+.carta-firma {
+    margin-top: 35px;
+    font-family: "Great Vibes", cursive;
+    font-size: 29px;
+    color: var(--burdeos);
+}
+
+/* ==========================================
+   BOTONES INTERACTIVOS GENERALES
+========================================== */
+
+.boton-preguntas,
+.boton-enviar-respuestas {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    margin: 22px auto;
+    background: var(--burdeos);
+    border: none;
+    border-radius: 6px;
+    color: var(--marfil);
+    font-family: Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+}
+
+.boton-preguntas:hover,
+.boton-enviar-respuestas:hover {
+    background: #5B242C;
+}
+
+/* ==========================================
+   DÍA 3 - PREGUNTAS
+========================================== */
+
+.tarjeta-pregunta {
+    margin-top: 22px;
+    padding: 22px 20px;
+    background: #F1EBE3;
+    border: 1px solid #E0D5C8;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.pregunta-titulo,
+.pregunta-texto {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 23px;
+    line-height: 1.3;
+    color: var(--chocolate);
+    margin-bottom: 15px;
+}
+
+.pregunta-respuesta,
+.respuesta-pregunta {
+    width: 100%;
+    min-height: 100px;
+    padding: 13px 15px;
+    resize: vertical;
+    background: var(--marfil);
+    border: 1px solid #D6C9BA;
+    border-radius: 5px;
+    color: var(--chocolate);
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.6;
+    outline: none;
+}
+
+.pregunta-respuesta:focus,
+.respuesta-pregunta:focus {
+    border-color: var(--burdeos);
+}
+
+.preguntas-posdata {
+    margin: 25px 0;
+    color: var(--burdeos);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 21px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* ==========================================
+   DÍA 4 - VALE DESAYUNO
+========================================== */
+
+.vale-desayuno {
+    position: relative;
+    margin: 28px 0 20px;
+    padding: 25px 22px;
+    background: #F5F0E8;
+    border: 1.5px dashed var(--dorado);
+    border-radius: 8px;
+    text-align: center;
+    color: var(--chocolate);
+}
+
+.vale-etiqueta {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #947B67;
+}
+
+.vale-titulo {
+    margin: 10px 0 15px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 34px;
+    font-weight: 500;
+    color: var(--burdeos);
+}
+
+.vale-descripcion {
+    max-width: 270px;
+    margin: 10px auto;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #665247;
+}
+
+.vale-datos {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 28px;
+    padding-top: 15px;
+    border-top: 1px solid #E0D5C8;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #947B67;
+}
+
+/* ==========================================
+   DÍA 5 - RECUERDOS EN POLAROID
+========================================== */
+
+.recuerdo-polaroid {
+    width: min(100%, 310px);
+    margin: 24px auto;
+    padding: 12px 12px 18px;
+    background: #FFFFFF;
+    box-shadow: 0 5px 22px rgba(73, 49, 39, 0.12);
+    transform: rotate(-1deg);
+}
+
+.recuerdo-imagen {
+    width: 100%;
+    min-height: 230px;
+    background: #EAE2D9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #947B67;
+    font-size: 15px;
+}
+
+.recuerdo-imagen img,
+.recuerdo-foto-secreta {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 370px;
+    object-fit: contain;
+    background: #EAE2D9;
+}
+
+.recuerdo-pie {
+    margin-top: 14px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 23px;
+    font-style: italic;
+    color: var(--chocolate);
+    text-align: center;
+}
+
+.boton-recuerdo-secundario,
+.boton-recuerdo-descubrir {
+    display: block;
+    width: 100%;
+    margin-top: 12px;
+    padding: 15px;
+    border-radius: 4px;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+}
+
+.boton-recuerdo-secundario {
+    background: var(--marfil);
+    color: var(--burdeos);
+    border: 1px solid var(--burdeos);
+}
+
+.boton-recuerdo-descubrir {
+    background: var(--burdeos);
+    color: #FFFFFF;
+    border: 1px solid var(--burdeos);
+}
+
+.boton-recuerdo-descubrir:disabled {
+    background: #D8CDC4;
+    border-color: #D8CDC4;
+    cursor: not-allowed;
+}
+
+.recuerdo-sorpresa {
+    margin-top: 35px;
+    animation: aparecerRecuerdo 0.6s ease;
+}
+
+.recuerdo-sorpresa .recuerdo-polaroid {
+    transform: rotate(2deg);
+}
+
+.recuerdo-dedicatoria {
+    margin: 25px 0 12px;
+    color: #665247;
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.9;
+    text-align: center;
+    white-space: pre-line;
+}
+
+/* ==========================================
+   DÍA 7 - TARJETA MUSICAL
+========================================== */
+
+.tarjeta-musical {
+    background: #F1EBE3;
+    border: 1px solid #D9CABC;
+    border-radius: 16px;
+    padding: 30px 22px;
+    max-width: 330px;
+    margin: 30px auto 20px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(73, 49, 39, 0.06);
+}
+
+.musical-portada {
+    display: block;
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto 22px;
+    box-shadow: 0 8px 22px rgba(73, 49, 39, 0.15);
+}
+
+.musical-etiqueta {
+    color: #947B67;
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin: 0 0 12px;
+}
+
+.musical-titulo {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    color: var(--chocolate);
+    font-size: 38px;
+    font-weight: 500;
+    margin: 0 0 5px;
+}
+
+.musical-artista {
+    color: var(--topo);
+    font-size: 17px;
+    margin: 0;
+}
+
+.musical-linea {
+    width: 55px;
+    height: 1px;
+    background: var(--dorado);
+    margin: 22px auto;
+}
+
+.musical-boton {
+    display: inline-block;
+    padding: 14px 22px;
+    background: var(--burdeos);
+    color: #FFFFFF !important;
+    border-radius: 8px;
+    text-decoration: none !important;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.2s ease;
+}
+
+.musical-boton:hover {
+    background: #57242B;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   DÍA 8 - SI FUÉRAMOS...
+========================================== */
+
+.juego8-tarjeta {
+    background: #F1EBE3;
+    border: 1px solid #D9CABC;
+    border-radius: 14px;
+    padding: 22px;
+    margin: 22px auto;
+    max-width: 370px;
+    text-align: center;
+}
+
+.juego8-numero {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #947B67;
+    margin-bottom: 12px;
+}
+
+.juego8-pregunta {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 23px;
+    font-weight: 500;
+    color: var(--chocolate);
+    margin: 0 0 18px;
+    line-height: 1.3;
+}
+
+.juego8-respuesta {
+    display: block;
+    width: 100%;
+    min-height: 75px;
+    padding: 12px;
+    border: 1px solid #D9CABC;
+    border-radius: 8px;
+    background: var(--marfil);
+    color: var(--chocolate);
+    font-family: inherit;
+    font-size: 15px;
+    resize: vertical;
+}
+
+.juego8-respuesta:focus {
+    outline: 1px solid var(--burdeos);
+}
+
+.juego8-boton,
+.juego8-boton-secundario {
+    display: block;
+    width: 100%;
+    max-width: 340px;
+    margin: 22px auto;
+    padding: 15px 12px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.juego8-boton {
+    background: var(--burdeos);
+    color: #FFFFFF;
+    border: none;
+}
+
+.juego8-boton-secundario {
+    background: transparent;
+    color: var(--burdeos);
+    border: 1px solid var(--burdeos);
+}
+
+.juego8-revelacion {
+    margin-top: 24px;
+    animation: aparecerJuego8 0.5s ease;
+}
+
+.juego8-etiqueta {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--burdeos);
+    margin-bottom: 14px;
+}
+
+.juego8-marco {
+    background: #FFFFFF;
+    padding: 10px 10px 16px;
+    box-shadow: 0 5px 18px rgba(73, 49, 39, 0.12);
+    transform: rotate(-1deg);
+}
+
+.juego8-imagen {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    background: var(--crema);
+}
+
+.juego8-nombre {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 25px;
+    color: var(--chocolate);
+    margin: 13px 0 0;
+}
+
+/* ==========================================
+   DÍA 10 - ALGUIEN ESPECIAL
+========================================== */
+
+.dia10-contenedor {
+    max-width: 390px;
+    margin: 25px auto;
+    text-align: center;
+}
+
+.dia10-papel-cerrado {
+    position: relative;
+    background: #F8F0E4;
+    border: 2px solid var(--burdeos);
+    padding: 45px 25px;
+    margin: 20px auto;
+    max-width: 300px;
+    box-shadow: 0 8px 20px rgba(73, 49, 39, 0.15);
+    animation: dia10Aparecer 0.6s ease;
+}
+
+.dia10-papel-cerrado::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    border-top: 1px solid rgba(180, 153, 129, 0.22);
+}
+
+.dia10-adorno {
+    color: var(--burdeos);
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.dia10-etiqueta {
+    color: #937B69;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 13px;
+}
+
+.dia10-linea {
+    width: 50px;
+    height: 1px;
+    background: var(--dorado);
+    margin: 20px auto;
+}
+
+.dia10-fecha {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #937B69;
+}
+
+.dia10-boton-abrir,
+.dia10-boton-cerrar {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    padding: 15px 30px;
+    margin: 25px auto;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dia10-boton-abrir {
+    background: var(--burdeos);
+    border: none;
+    color: #FFFFFF;
+}
+
+.dia10-boton-abrir:hover {
+    background: #5B242C;
+}
+
+.dia10-boton-cerrar {
+    background: transparent;
+    border: 1px solid var(--burdeos);
+    color: var(--burdeos);
+}
+
+.dia10-carta-abierta {
+    background: #FFF9F0;
+    border: 1px solid #D3BEA8;
+    padding: 32px 25px;
+    margin: 20px auto;
+    box-shadow: 0 8px 25px rgba(73, 49, 39, 0.10);
+    text-align: left;
+    animation: dia10Desplegar 0.7s ease;
+    transform-origin: top center;
+}
+
+.dia10-fecha-interior {
+    text-align: right;
+    color: #937B69;
+    font-size: 11px;
+    margin-bottom: 30px;
+}
+
+.dia10-saludo {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 27px;
+    font-weight: 500;
+    font-style: italic;
+    color: var(--chocolate);
+    margin-bottom: 22px;
+}
+
+.dia10-carta-abierta > p:not(.dia10-fecha-interior) {
+    color: var(--chocolate);
+    font-size: 15px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.dia10-carta-abierta .dia10-despedida {
+    font-style: italic;
+}
+
+.dia10-carta-abierta .dia10-firma {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 23px;
+    font-style: italic;
+    text-align: right;
+    color: var(--burdeos);
+    margin-top: 30px;
+}
+
+/* ==========================================
+   DÍA 11 - EL TIEMPO
+   LIBRETA INTERACTIVA
+========================================== */
+
+.dia11-contenedor {
+    max-width: 390px;
+    margin: 25px auto;
+    text-align: center;
+}
+
+.dia11-introduccion {
+    color: #665247;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 21px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    white-space: pre-line;
+}
+
+.dia11-libreta {
+    position: relative;
+    background: #FFF9ED;
+    border: 1px solid #D9C7AF;
+    padding: 25px 20px 28px 35px;
+    margin: 28px auto;
+    text-align: left;
+    box-shadow: 0 8px 22px rgba(73, 49, 39, 0.12);
+    transform: rotate(-0.5deg);
+}
+
+.dia11-libreta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 25px;
+    width: 1px;
+    background: #D7A6A0;
+    pointer-events: none;
+}
+
+.dia11-fecha {
+    font-family: Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #937B69;
+    margin-bottom: 22px;
+}
+
+.dia11-saludo {
+    display: block;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 27px;
+    font-style: italic;
+    font-weight: 500;
+    color: var(--chocolate);
+    margin-bottom: 18px;
+}
+
+.dia11-escritura {
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    padding: 0 4px;
+    border: none;
+    outline: none;
+    resize: vertical;
+    background-color: transparent;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 32px,
+        #DCD7CF 33px,
+        transparent 34px
+    );
+    background-attachment: local;
+    color: var(--chocolate);
+    font-family: Georgia, serif;
+    font-size: 15px;
+    line-height: 34px;
+}
+
+.dia11-escritura::placeholder {
+    color: #B1A399;
+    font-style: italic;
+}
+
+.dia11-firma {
+    margin-top: 20px;
+    text-align: right;
+    color: var(--burdeos);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.dia11-boton-guardar {
+    display: block;
+    width: 100%;
+    max-width: 330px;
+    margin: 24px auto 18px;
+    padding: 15px;
+    background: var(--burdeos);
+    border: 1px solid var(--burdeos);
+    border-radius: 7px;
+    color: #FFFFFF;
+    font-family: Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dia11-boton-guardar:hover {
+    background: #5B242C;
+}
+
+.dia11-sello {
+    margin-top: 20px;
+    padding: 12px;
+    border: 1px dashed var(--dorado);
+    color: #937B69;
+    font-family: Georgia, serif;
+    font-size: 10px;
+    letter-spacing: 1px;
+    line-height: 1.7;
+}
+
+.dia11-aviso {
+    color: var(--topo);
+    font-family: Georgia, serif;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+/* ==========================================
+   ANIMACIONES
+========================================== */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes brillo {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+}
+
+@keyframes aparecerCarta {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes aparecerRecuerdo {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aparecerJuego8 {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dia10Aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dia10Desplegar {
+    from {
+        opacity: 0;
+        transform: scaleY(0.75) translateY(-15px);
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1) translateY(0);
+    }
+}
+
+/* ==========================================
+   ADAPTACIÓN A MÓVILES
+========================================== */
+
+@media (max-width: 600px) {
+    .portada {
+        padding: 14px;
+    }
+
+    .marco {
+        min-height: 90vh;
+        min-height: 90dvh;
+        padding: 95px 18px;
+    }
+
+    .portada h1 {
+        font-size: clamp(37px, 9vw, 55px);
+        letter-spacing: 1px;
+    }
+
+    .portada h2 {
+        font-size: clamp(55px, 12vw, 75px);
+        margin-top: 0;
+    }
+
+    .estrellas {
+        font-size: 20px;
+        letter-spacing: 8px;
+    }
+
+    .subtitulo {
+        font-size: 24px;
+    }
+
+    #comenzar {
+        font-size: 21px;
+        padding: 13px 45px;
+    }
+
+    .rama-superior {
+        top: 10px;
+        left: -35px;
+        transform: rotate(-20deg) scale(0.55);
+    }
+
+    .rama-inferior {
+        bottom: 10px;
+        right: -35px;
+        transform: rotate(160deg) scale(0.55);
+    }
+
+    .calendario {
+        padding: 55px 15px;
+    }
+
+    .calendario-subtitulo {
+        margin-bottom: 35px;
+    }
+
+    .sobres {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+    }
+
+    .sobre {
+        height: 100px;
+    }
+
+    .sello {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+
+    .carta {
+        padding: 60px 28px 45px;
+    }
+
+    .carta-texto {
+        font-size: 21px;
+    }
+
+    .carta-etiqueta {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .tarjeta-pregunta {
+        padding: 18px 15px;
+    }
+
+    .pregunta-titulo {
+        font-size: 21px;
+    }
+
+    .vale-desayuno {
+        padding: 20px 15px;
+    }
+
+    .vale-titulo {
+        font-size: 29px;
+    }
+
+    .dia10-carta-abierta {
+        padding: 26px 19px;
+    }
+
+    .dia11-libreta {
+        padding: 22px 14px 25px 30px;
+    }
+
+    .dia11-libreta::before {
+        left: 20px;
+    }
+
+    .dia11-introduccion {
+        font-size: 19px;
+    }
+
+    .dia11-escritura {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* DÍA 12 — TEST DE AMISTAD */
+
+.dia12-test,
+.dia12-resultado {
+  width: 100%;
+  text-align: center;
+  animation: dia12Aparecer 0.35s ease;
+}
+
+.dia12-contador {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #967C6B;
+  margin-bottom: 17px;
+}
+
+.dia12-progreso {
+  height: 5px;
+  background: #E8DED4;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.dia12-progreso-interior {
+  height: 100%;
+  background: #722F37;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.dia12-pregunta {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #493127;
+  margin: 0 0 25px;
+}
+
+.dia12-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dia12-opcion {
+  display: block;
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid #E4D4C5;
+  border-radius: 8px;
+  background: #FAF6F0;
+  color: #493127;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dia12-opcion:hover {
+  background: #F1E6DF;
+  border-color: #722F37;
+  transform: translateY(-2px);
+}
+
+.dia12-medalla {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.dia12-porcentaje {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 62px;
+  font-weight: 600;
+  color: #722F37;
+  margin-bottom: 12px;
+}
+
+.dia12-mensaje {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #665247;
+  margin-bottom: 20px;
+}
+
+.dia12-premio {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #722F37;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.dia12-repetir {
+  padding: 13px 25px;
+  border: none;
+  border-radius: 5px;
+  background: #722F37;
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+}
+
+.dia12-repetir:hover {
+  background: #542329;
+}
+
+@keyframes dia12Aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .dia12-pregunta {
+    font-size: 23px;
+  }
+
+  .dia12-opcion {
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  .dia12-porcentaje {
+    font-size: 52px;
+  }
+}
+
+/* DÍA 13 — GALLETA DE LA FORTUNA */
+
+.dia13-contenedor {
+  width: 100%;
+  text-align: center;
+  color: #493127;
+}
+
+.dia13-etiqueta {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #967C6B;
+  margin: 0 0 18px;
+}
+
+.dia13-intro {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  line-height: 1.45;
+  color: #806B5B;
+  margin: 0 auto 20px;
+  max-width: 350px;
+}
+
+.dia13-galleta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.dia13-dibujo {
+  display: block;
+  width: min(240px, 100%);
+  transition: transform .25s ease;
+}
+
+.dia13-dibujo svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.dia13-galleta:hover .dia13-dibujo {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+.dia13-instruccion {
+  margin: 4px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #722F37;
+}
+
+.dia13-papel {
+  padding: 22px 18px;
+  margin: 0 auto 22px;
+  max-width: 350px;
+  background: #FFF9E9;
+  border: 1px solid #DCC7AB;
+  border-radius: 3px;
+  box-shadow: 0 5px 18px rgba(73,49,39,.08);
+  animation: dia13Papel .45s ease both;
+}
+
+.dia13-papel[hidden] {
+  display: none !important;
+}
+
+.dia13-numero {
+  margin: 0 0 12px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #A38362;
+}
+
+.dia13-prediccion {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #493127;
+}
+
+.dia13-nota {
+  margin: 16px 0 0;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #967C6B;
+}
+
+.dia13-animando .dia13-dibujo {
+  animation: dia13Romper .45s ease both;
+}
+
+@keyframes dia13Romper {
+  0% {
+    transform: scale(1) rotate(0);
+  }
+  25% {
+    transform: scale(1.1) rotate(-8deg);
+  }
+  55% {
+    transform: scale(.92) rotate(7deg);
+  }
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes dia13Papel {
+  from {
+    opacity: 0;
+    transform: translateY(-12px) scale(.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (max-width: 600px) {
+  .dia13-intro {
+    font-size: 19px;
+  }
+
+  .dia13-prediccion {
+    font-size: 21px;
+  }
+
+  .dia13-dibujo {
+    width: min(210px, 100%);
+  }
+}
+
+/* DÍA 14 — MANUAL DE INSTRUCCIONES */
+
+.dia14-contenedor {
+  width: 100%;
+  padding: 12px;
+  background: #E9DDD0;
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.dia14-superior {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #73544B;
+}
+
+.dia14-libro {
+  background: #FBF5E9;
+  border: 1px solid #CDBBA7;
+  box-shadow: 4px 5px 0 #D4C2B1;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.dia14-pagina {
+  min-height: 340px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  transform-origin: left center;
+}
+
+.dia14-encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #9B7E69;
+}
+
+.dia14-encabezado span:first-child,
+.dia14-encabezado span:last-child {
+  color: #813D4A;
+  font-size: 16px;
+}
+
+.dia14-centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+  flex: 1;
+  padding: 24px 4px;
+}
+
+.dia14-icono {
+  font-size: 28px;
+  color: #813D4A;
+}
+
+.dia14-volumen,
+.dia14-edicion {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #9B7E69;
+  margin: 0;
+}
+
+.dia14-centro h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 600;
+  color: #5A3833;
+  margin: 0;
+}
+
+.dia14-linea {
+  width: 65px;
+  height: 1px;
+  background: #813D4A;
+  opacity: .6;
+}
+
+.dia14-subtitulo,
+.dia14-texto {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  line-height: 1.3;
+  color: #5A3833;
+  margin: 0;
+}
+
+.dia14-subtitulo {
+  font-size: 21px;
+  font-style: italic;
+  color: #85685A;
+}
+
+.dia14-numero {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 62px;
+  line-height: 1;
+  color: #813D4A;
+}
+
+.dia14-posdata {
+  font-style: italic;
+  font-size: 23px;
+}
+
+.dia14-pie {
+  text-align: center;
+  font-size: 13px;
+  color: #813D4A;
+  letter-spacing: 3px;
+}
+
+.dia14-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.dia14-navegacion button {
+  border: 1px solid #BCA698;
+  border-radius: 7px;
+  background: #FBF5E9;
+  color: #813D4A;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  padding: 10px 9px;
+  cursor: pointer;
+}
+
+.dia14-navegacion button:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.dia14-puntos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.dia14-punto {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #C8B6A7;
+}
+
+.dia14-punto.activo {
+  width: 13px;
+  border-radius: 5px;
+  background: #813D4A;
+}
+
+.dia14-animacion {
+  animation: dia14Pasar .35s ease both;
+}
+
+@keyframes dia14Pasar {
+  from {
+    opacity: .4;
+    transform: perspective(800px) rotateY(-8deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(800px) rotateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .dia14-pagina {
+    min-height: 320px;
+    padding: 18px 12px;
+  }
+
+  .dia14-centro h2 {
+    font-size: 29px;
+  }
+
+  .dia14-texto {
+    font-size: 22px;
+  }
+
+  .dia14-posdata {
+    font-size: 21px;
+  }
+}
+
+/* DÍA 16 — TICKET REGALO */
+
+.dia16-contenedor {
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.dia16-ticket {
+  position: relative;
+  background: #FFF8EC;
+  border: 2px dashed #B99483;
+  border-radius: 14px;
+  padding: 25px 18px;
+  box-shadow: 0 8px 24px rgba(73, 49, 39, .1);
+  color: #5A3833;
+}
+
+.dia16-superior {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #9B7E69;
+}
+
+.dia16-corazon {
+  font-size: 48px;
+  color: #813D4A;
+  margin-top: 18px;
+}
+
+.dia16-etiqueta {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #9B7E69;
+  margin: 8px 0;
+}
+
+.dia16-ticket h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 35px;
+  color: #813D4A;
+  margin: 8px 0;
+}
+
+.dia16-premio {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 27px;
+  font-style: italic;
+  color: #5A3833;
+  margin: 8px 0 20px;
+}
+
+.dia16-separador {
+  color: #B99483;
+  letter-spacing: 3px;
+  margin: 20px 0;
+  font-size: 13px;
+}
+
+.dia16-descripcion {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  line-height: 1.45;
+  margin: 15px 0;
+}
+
+.dia16-condiciones {
+  margin: 22px 0;
+  padding: 15px;
+  background: #F3E8DB;
+  border-radius: 8px;
+}
+
+.dia16-condiciones strong {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #813D4A;
+}
+
+.dia16-condiciones p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 9px 0 0;
+}
+
+.dia16-sello {
+  display: inline-block;
+  padding: 10px 14px;
+  border: 2px solid #813D4A;
+  border-radius: 50%;
+  color: #813D4A;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transform: rotate(-7deg);
+  margin: 12px 0 24px;
+}
+
+.dia16-boton {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+  padding: 13px 15px;
+  background: #813D4A;
+  color: #FFF8EC;
+  border: none;
+  border-radius: 25px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease;
+}
+
+.dia16-boton:hover {
+  background: #632B37;
+  transform: scale(1.03);
+}
+
+.dia16-boton:disabled {
+  opacity: .8;
+  cursor: default;
+}
+
+.dia16-confirmacion {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  line-height: 1.4;
+  color: #813D4A;
+  margin: 18px 0 0;
+}
+
+.dia16-confirmacion[hidden] {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .dia16-ticket {
+    padding: 20px 13px;
+  }
+
+  .dia16-ticket h2 {
+    font-size: 30px;
+  }
+
+  .dia16-premio {
+    font-size: 24px;
+  }
+
+  .dia16-descripcion {
+    font-size: 19px;
+  }
+}
+
+/* DÍA 17 — ¿QUÉ PREFIERES? */
+
+.dia17-contenedor {
+  width: 100%;
+  padding: 10px 0;
+  color: #5A3833;
+}
+
+.dia17-cabecera {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #967C6B;
+}
+
+.dia17-progreso {
+  width: 100%;
+  height: 6px;
+  margin: 15px 0 24px;
+  background: #E9DDD0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.dia17-barra {
+  height: 100%;
+  background: #813D4A;
+  border-radius: 20px;
+  transition: width .3s ease;
+}
+
+.dia17-aviso {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #967C6B;
+  margin: 0 0 18px;
+}
+
+.dia17-pregunta {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  font-weight: 600;
+  text-align: center;
+  color: #813D4A;
+  margin: 0 0 25px;
+}
+
+.dia17-opciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dia17-opcion {
+  width: 100%;
+  min-height: 90px;
+  padding: 20px 16px;
+  border: 1px solid #D7BFB2;
+  border-radius: 13px;
+  background: #FFF9F0;
+  color: #5A3833;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.3;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+
+.dia17-opcion:hover {
+  border-color: #813D4A;
+  transform: translateY(-2px);
+}
+
+.dia17-opcion.seleccionada {
+  border: 2px solid #813D4A;
+  background: #F1E2E2;
+  box-shadow: 0 3px 12px rgba(129,61,74,.12);
+}
+
+.dia17-o {
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+  color: #967C6B;
+}
+
+.dia17-navegacion {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.dia17-navegacion button,
+.dia17-reiniciar {
+  padding: 12px 18px;
+  border: 1px solid #813D4A;
+  border-radius: 25px;
+  background: #813D4A;
+  color: #FFF9F0;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.dia17-navegacion button:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.dia17-anterior {
+  background: transparent !important;
+  color: #813D4A !important;
+}
+
+.dia17-final {
+  padding: 22px 8px;
+  text-align: center;
+  animation: dia17Aparecer .5s ease both;
+}
+
+.dia17-final-icono {
+  font-size: 50px;
+  margin-bottom: 12px;
+}
+
+.dia17-etiqueta {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #967C6B;
+}
+
+.dia17-final h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 34px;
+  color: #813D4A;
+  margin: 15px 0;
+}
+
+.dia17-final > p:not(.dia17-etiqueta) {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+.dia17-final-mensaje {
+  padding: 18px;
+  margin: 22px 0;
+  border: 1px solid #D7BFB2;
+  border-radius: 12px;
+  background: #FFF9F0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+@keyframes dia17Aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .dia17-pregunta {
+    font-size: 30px;
+  }
+
+  .dia17-opcion {
+    font-size: 21px;
+    padding: 17px 12px;
+  }
+
+  .dia17-navegacion button {
+    padding: 11px 13px;
+    font-size: 11px;
+  }
+}
+/* DÍA 18 — GOSSIP GIRL */
+
+.dia18-contenedor {
+  text-align: center;
+  padding: 12px 4px 22px;
+  color: #593B3B;
+  animation: dia18Aparecer .7s ease;
+}
+
+.dia18-etiqueta {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #9B7770;
+  margin-bottom: 20px;
+}
+
+.dia18-foto {
+  display: block;
+  width: 100%;
+  max-width: 380px;
+  max-height: 300px;
+  object-fit: cover;
+  margin: 0 auto 25px;
+  border: 7px solid #FFF9F0;
+  box-shadow: 0 5px 22px rgba(65, 36, 36, .18);
+}
+
+.dia18-cita {
+  max-width: 390px;
+  margin: 0 auto;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  font-style: italic;
+  line-height: 1.45;
+  color: #713B48;
+}
+
+.dia18-autor {
+  margin-top: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #A18479;
+}
+
+.dia18-separador {
+  font-size: 24px;
+  color: #B38C82;
+  margin: 22px 0;
+}
+
+.dia18-dedicatoria {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.4;
+  color: #593B3B;
+}
+
+.dia18-xoxo {
+  margin-top: 25px;
+  font-family: "Great Vibes", cursive;
+  font-size: 39px;
+  color: #813D4A;
+}
+
+@keyframes dia18Aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .dia18-cita {
+    font-size: 23px;
+  }
+
+  .dia18-dedicatoria {
+    font-size: 21px;
+  }
+}
+
+/* DÍA 19 — SOPA DE LETRAS */
+
+.dia19-contenedor {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 10px 0 20px;
+  color: #593B3B;
+}
+
+.dia19-intro {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  text-align: center;
+  color: #813D4A;
+  margin-bottom: 24px;
+}
+
+.dia19-progreso {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #8C6E67;
+}
+
+.dia19-progreso strong {
+  color: #813D4A;
+  font-size: 13px;
+}
+
+.dia19-tablero {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  width: 100%;
+  gap: 2px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #DCC8B9;
+  border-radius: 12px;
+  background: #FFF9F0;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: crosshair;
+}
+
+.dia19-casilla {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  min-width: 0;
+  border-radius: 4px;
+  background: #F2E8DD;
+  color: #654847;
+  font-family: Arial, sans-serif;
+  font-size: clamp(9px, 2.5vw, 15px);
+  font-weight: 600;
+  transition: background .15s ease;
+}
+
+.dia19-casilla.seleccionando {
+  background: #D9AEB7;
+  color: #642E3C;
+}
+
+.dia19-casilla.encontrada {
+  background: #813D4A;
+  color: #FFFFFF;
+}
+
+.dia19-instrucciones {
+  margin: 15px 0 20px;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+  color: #967C6B;
+}
+
+.dia19-palabras {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.dia19-palabra {
+  padding: 10px 6px;
+  border: 1px solid #DFC9C3;
+  border-radius: 20px;
+  background: #FFF9F0;
+  color: #813D4A;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.dia19-palabra.encontrada {
+  background: #E9D8DB;
+  text-decoration: line-through;
+  opacity: .65;
+}
+
+.dia19-final {
+  margin-top: 28px;
+  padding: 24px 16px;
+  border: 1px solid #E2C9C9;
+  border-radius: 14px;
+  background: #FFF7F3;
+  text-align: center;
+  animation: dia19Aparecer .6s ease both;
+}
+
+.dia19-final[hidden] {
+  display: none;
+}
+
+.dia19-corazon {
+  font-size: 38px;
+  color: #813D4A;
+}
+
+.dia19-final h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 29px;
+  color: #813D4A;
+  margin: 12px 0;
+}
+
+.dia19-final p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.4;
+  color: #593B3B;
+}
+
+@keyframes dia19Aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 400px) {
+  .dia19-tablero {
+    padding: 5px;
+    gap: 1px;
+  }
+
+  .dia19-casilla {
+    font-size: 10px;
+  }
+
+  .dia19-palabra {
+    font-size: 10px;
+    letter-spacing: .5px;
+  }
+}
+
+/* DÍA 20 — HORÓSCOPO VIRGO */
+
+.dia20-contenedor {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 10px 0 25px;
+  color: #593B3B;
+}
+
+.dia20-encabezado {
+  text-align: center;
+  padding: 24px 15px;
+  background: #FFF9F0;
+  border: 1px solid #E5D2BE;
+  border-radius: 16px;
+}
+
+.dia20-estrellas {
+  display: block;
+  color: #B69A66;
+  font-size: 19px;
+  letter-spacing: 8px;
+}
+
+.dia20-etiqueta {
+  margin: 16px 0;
+  color: #A1856D;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.dia20-circulo {
+  width: 155px;
+  height: 155px;
+  margin: 18px auto;
+  border: 1px solid #C5A878;
+  outline: 1px solid #E6D5B8;
+  outline-offset: 6px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #F8EFE4;
+  box-shadow: 0 4px 20px rgba(104, 65, 50, .06);
+}
+
+.dia20-simbolo {
+  font-size: 57px;
+  line-height: 1;
+  color: #813D4A;
+}
+
+.dia20-signo {
+  margin-top: 12px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+  letter-spacing: 5px;
+  color: #813D4A;
+}
+
+.dia20-subtitulo {
+  max-width: 280px;
+  margin: 23px auto 17px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #684B47;
+}
+
+.dia20-instrucciones {
+  margin: 25px 0 18px;
+  text-align: center;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  color: #813D4A;
+}
+
+.dia20-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.dia20-tarjeta {
+  min-width: 0;
+  background: #FFF9F0;
+  border: 1px solid #E4CEC1;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.dia20-tarjeta.abierta {
+  border-color: #B98B93;
+  box-shadow: 0 4px 15px rgba(129, 61, 74, .08);
+}
+
+.dia20-boton {
+  width: 100%;
+  min-height: 135px;
+  padding: 18px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: #813D4A;
+}
+
+.dia20-icono {
+  font-size: 29px;
+}
+
+.dia20-categoria {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.dia20-pista {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  color: #A18473;
+}
+
+.dia20-revelacion {
+  padding: 14px 12px 18px;
+  border-top: 1px solid #E8D9CF;
+  background: #F9F0E9;
+  text-align: center;
+  animation: dia20Aparecer .35s ease both;
+}
+
+.dia20-revelacion[hidden],
+.dia20-final[hidden] {
+  display: none;
+}
+
+.dia20-planeta {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 19px;
+  color: #A17B4F;
+}
+
+.dia20-revelacion p {
+  margin: 10px 0 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  line-height: 1.4;
+  color: #593B3B;
+}
+
+.dia20-contador {
+  margin: 20px 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: .5px;
+  color: #967C6B;
+}
+
+.dia20-contador strong {
+  color: #813D4A;
+}
+
+.dia20-final {
+  margin-top: 26px;
+  padding: 28px 20px;
+  background: #FFF7F0;
+  border: 1px solid #DCC5AE;
+  border-radius: 14px;
+  text-align: center;
+  animation: dia20Aparecer .7s ease both;
+}
+
+.dia20-final-estrellas {
+  color: #B69A66;
+  font-size: 22px;
+  letter-spacing: 8px;
+}
+
+.dia20-final h2 {
+  margin: 17px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 28px;
+  line-height: 1.15;
+  color: #813D4A;
+}
+
+.dia20-final p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  line-height: 1.45;
+  color: #593B3B;
+}
+
+.dia20-final-firma {
+  display: block;
+  margin-top: 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 19px;
+  color: #A17B4F;
+}
+
+@keyframes dia20Aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 400px) {
+  .dia20-tarjetas {
+    gap: 8px;
+  }
+
+  .dia20-boton {
+    min-height: 120px;
+    padding: 12px 6px;
+  }
+
+  .dia20-categoria {
+    font-size: 19px;
+  }
+
+  .dia20-revelacion p {
+    font-size: 17px;
+  }
+}
+
+/* DÍA 21 — LIBRITO DE ADMIRACIÓN */
+
+.dia21-contenedor {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 10px 0 20px;
+  color: #593B3B;
+}
+
+.dia21-encabezado {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.dia21-linea {
+  display: block;
+  width: 45px;
+  height: 1px;
+  margin: 0 auto 16px;
+  background: #B99B70;
+}
+
+.dia21-etiqueta {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #9E7C65;
+}
+
+.dia21-introduccion {
+  max-width: 300px;
+  margin: 14px auto 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.3;
+  color: #813D4A;
+}
+
+.dia21-libro {
+  padding: 9px;
+  background: #F2E5D8;
+  border: 1px solid #DDC9B8;
+  border-radius: 13px;
+  box-shadow: 5px 7px 0 #E8D7C9;
+}
+
+.dia21-pagina {
+  min-height: 340px;
+  padding: 35px 25px;
+  background: #FFFDF8;
+  border: 1px solid #E8D6C7;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.dia21-numero {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  color: #B99B70;
+  letter-spacing: 3px;
+}
+
+.dia21-titulo {
+  margin: 18px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: #813D4A;
+}
+
+.dia21-separador {
+  width: 45px;
+  height: 1px;
+  background: #D7BCA8;
+  margin-bottom: 22px;
+}
+
+.dia21-texto {
+  max-width: 330px;
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.4;
+  color: #593B3B;
+}
+
+.dia21-pagina-final {
+  min-height: 340px;
+}
+
+.dia21-pagina-final .dia21-titulo {
+  font-size: 21px;
+  letter-spacing: 1px;
+  color: #9E7C65;
+}
+
+.dia21-pagina-final .dia21-texto {
+  font-size: 32px;
+  font-style: italic;
+  line-height: 1.3;
+  color: #813D4A;
+}
+
+.dia21-pagina-final .dia21-separador {
+  background: #B99B70;
+}
+
+.dia21-animacion {
+  animation: dia21PasarPagina .4s ease both;
+}
+
+@keyframes dia21PasarPagina {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.dia21-navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-top: 25px;
+}
+
+.dia21-anterior,
+.dia21-siguiente {
+  padding: 11px 14px;
+  border: 1px solid #D7BCA8;
+  border-radius: 20px;
+  background: #FFF9F0;
+  color: #813D4A;
+  font-family: Arial, sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.dia21-anterior:hover,
+.dia21-siguiente:hover {
+  background: #F1E2D8;
+}
+
+.dia21-anterior:disabled,
+.dia21-siguiente:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.dia21-contador {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: #9E7C65;
+  white-space: nowrap;
+}
+
+.dia21-indicadores {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 20px;
+}
+
+.dia21-punto {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #DCC9BD;
+  transition: .2s ease;
+}
+
+.dia21-punto.activo {
+  width: 18px;
+  border-radius: 5px;
+  background: #813D4A;
+}
+
+@media (max-width: 400px) {
+  .dia21-pagina {
+    min-height: 330px;
+    padding: 25px 16px;
+  }
+
+  .dia21-titulo {
+    font-size: 29px;
+  }
+
+  .dia21-texto {
+    font-size: 21px;
+  }
+
+  .dia21-pagina-final .dia21-texto {
+    font-size: 28px;
+  }
+
+  .dia21-anterior,
+  .dia21-siguiente {
+    padding: 10px;
+    font-size: 10px;
+  }
+}
+
+/* DÍA 22 — LOTERÍA DE NAVIDAD */
+
+.dia22-contenedor {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 10px 0 25px;
+  color: #593B3B;
+}
+
+.dia22-encabezado {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.dia22-linea {
+  display: block;
+  width: 45px;
+  height: 1px;
+  margin: 0 auto 17px;
+  background: #B99B70;
+}
+
+.dia22-etiqueta {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #9E7C65;
+}
+
+.dia22-encabezado h2 {
+  margin: 15px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 32px;
+  color: #813D4A;
+}
+
+.dia22-intro {
+  max-width: 340px;
+  margin: 0 auto;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  line-height: 1.4;
+  color: #593B3B;
+}
+
+/* DÉCIMO */
+
+.dia22-decimo {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #B99B70;
+  border-radius: 9px;
+  background: #FFF9F0;
+  box-shadow: 0 7px 20px rgba(100, 60, 45, .09);
+}
+
+.dia22-decimo::before,
+.dia22-decimo::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #FAF3EA;
+  border: 1px solid #B99B70;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.dia22-decimo::before {
+  left: -11px;
+}
+
+.dia22-decimo::after {
+  right: -11px;
+}
+
+.dia22-decimo-superior,
+.dia22-decimo-inferior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 17px;
+  background: #813D4A;
+  color: #FFF9F0;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.dia22-decimo-inferior {
+  background: #F0E1D3;
+  color: #813D4A;
+  border-top: 1px solid #D9BFA7;
+}
+
+.dia22-decimo-centro {
+  padding: 26px 15px;
+  text-align: center;
+}
+
+.dia22-adornos {
+  display: block;
+  color: #B99B70;
+  font-size: 18px;
+  letter-spacing: 5px;
+}
+
+.dia22-decimo-centro p {
+  margin: 16px 0 7px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  color: #813D4A;
+}
+
+.dia22-numero-previo {
+  margin: 12px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(38px, 10vw, 55px);
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #593B3B;
+  font-variant-numeric: tabular-nums;
+}
+
+.dia22-serie {
+  display: block;
+  margin: 15px 0 20px;
+  font-family: Arial, sans-serif;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #A1856D;
+}
+
+/* FORMULARIO */
+
+.dia22-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 27px auto;
+  text-align: center;
+}
+
+.dia22-formulario label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  color: #813D4A;
+}
+
+.dia22-formulario input {
+  width: 180px;
+  max-width: 100%;
+  padding: 13px 15px;
+  box-sizing: border-box;
+  border: 1px solid #D7BCA8;
+  border-radius: 9px;
+  background: #FFFDF8;
+  color: #813D4A;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  letter-spacing: 5px;
+  outline: none;
+}
+
+.dia22-formulario input:focus {
+  border-color: #813D4A;
+  box-shadow: 0 0 0 3px rgba(129, 61, 74, .1);
+}
+
+.dia22-comprobar {
+  padding: 13px 27px;
+  border: none;
+  border-radius: 25px;
+  background: #813D4A;
+  color: #FFF9F0;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+.dia22-comprobar:hover:not(:disabled) {
+  background: #65303B;
+  transform: translateY(-2px);
+}
+
+.dia22-comprobar:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+
+/* RESULTADO PREMIADO */
+
+.dia22-resultado {
+  margin-top: 30px;
+  padding: 28px 20px;
+  border: 1px solid #D9BFA7;
+  border-radius: 13px;
+  background: #FFF9F0;
+  text-align: center;
+  animation: dia22Aparecer .6s ease both;
+}
+
+.dia22-resultado[hidden] {
+  display: none;
+}
+
+.dia22-resultado-etiqueta {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #A17B4F;
+}
+
+.dia22-numero-premiado {
+  margin: 17px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 43px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #813D4A;
+}
+
+.dia22-resultado h2 {
+  margin: 20px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 33px;
+  color: #813D4A;
+}
+
+.dia22-resultado p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.4;
+  color: #593B3B;
+}
+
+.dia22-separador {
+  width: 55px;
+  height: 1px;
+  margin: 25px auto;
+  background: #B99B70;
+}
+
+.dia22-resultado .dia22-frase-final {
+  font-style: italic;
+  font-size: 25px;
+  color: #813D4A;
+}
+
+@keyframes dia22Aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 400px) {
+  .dia22-decimo-superior,
+  .dia22-decimo-inferior {
+    font-size: 9px;
+    padding: 11px;
+  }
+
+  .dia22-resultado p {
+    font-size: 21px;
+  }
+
+  .dia22-resultado .dia22-frase-final {
+    font-size: 23px;
+  }
+}
+
+/* DÍA 23 — LA ÚLTIMA PISTA */
+
+.dia23-contenedor {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 12px 0 25px;
+}
+
+.dia23-carta {
+  padding: 32px 23px;
+  background: #FFF9F0;
+  border: 1px solid #D9BFA7;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(90, 50, 40, 0.06);
+}
+
+.dia23-fecha {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #A17B4F;
+}
+
+.dia23-adorno {
+  margin-top: 14px;
+  font-size: 24px;
+  color: #B99B70;
+}
+
+.dia23-carta h2 {
+  margin: 12px 0 23px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 35px;
+  color: #813D4A;
+}
+
+.dia23-carta p {
+  margin: 0 0 19px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.45;
+  color: #593B3B;
+}
+
+.dia23-carta .dia23-pregunta {
+  margin-top: 25px;
+  color: #813D4A;
+  font-style: italic;
+}
+
+.dia23-boton,
+.dia23-enviar {
+  margin-top: 10px;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 25px;
+  background: #813D4A;
+  color: #FFF9F0;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.dia23-boton:hover,
+.dia23-enviar:hover {
+  background: #65303B;
+}
+
+.dia23-teoria {
+  margin-top: 20px;
+}
+
+.dia23-teoria[hidden],
+.dia23-respuesta[hidden],
+.dia23-boton[hidden] {
+  display: none;
+}
+
+.dia23-textarea {
+  display: block;
+  width: 100%;
+  min-height: 95px;
+  padding: 13px;
+  box-sizing: border-box;
+  border: 1px solid #D9BFA7;
+  border-radius: 9px;
+  background: #FFFCF8;
+  color: #593B3B;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 21px;
+  resize: vertical;
+  outline: none;
+}
+
+.dia23-textarea:focus {
+  border-color: #813D4A;
+}
+
+.dia23-respuesta {
+  margin-top: 25px;
+  padding: 22px 15px;
+  border-top: 1px solid #D9BFA7;
+  animation: dia23Aparecer .5s ease;
+}
+
+.dia23-respuesta span {
+  color: #B99B70;
+  font-size: 24px;
+}
+
+.dia23-carta .dia23-respuesta p {
+  margin: 12px 0 0;
+  color: #813D4A;
+  font-style: italic;
+}
+
+@keyframes dia23Aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================================
+   DÍA 24 — EL SENTIDO DE TODO
+=================================== */
+
+.dia24-contenedor {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 12px 0 30px;
+}
+
+.dia24-carta-inicial,
+.dia24-carta-final {
+  padding: 35px 25px;
+  background: #FFF9F0;
+  border: 1px solid #D9BFA7;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(90, 50, 40, 0.06);
+}
+
+.dia24-carta-inicial[hidden],
+.dia24-carta-final[hidden] {
+  display: none;
+}
+
+.dia24-fecha {
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #A17B4F;
+}
+
+.dia24-adorno {
+  margin: 16px 0 8px;
+  font-size: 25px;
+  color: #B99B70;
+}
+
+.dia24-carta-inicial h2,
+.dia24-carta-final h2 {
+  margin: 12px 0 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 35px;
+  line-height: 1.15;
+  color: #813D4A;
+}
+
+.dia24-linea {
+  width: 55px;
+  height: 1px;
+  margin: 22px auto;
+  background: #B99B70;
+}
+
+.dia24-carta-inicial p,
+.dia24-carta-final p {
+  margin: 0 0 20px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 23px;
+  line-height: 1.45;
+  color: #593B3B;
+}
+
+/* AUDIOS */
+
+.dia24-audio {
+  margin: 25px 0 18px;
+  padding: 20px 12px;
+  border-top: 1px solid #E2CEB9;
+  border-bottom: 1px solid #E2CEB9;
+}
+
+.dia24-audio-etiqueta {
+  display: block;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #A17B4F;
+}
+
+.dia24-escuchar1,
+.dia24-escuchar2 {
+  padding: 12px 24px;
+  border: 1px solid #B99B70;
+  border-radius: 25px;
+  background: transparent;
+  color: #813D4A;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.dia24-escuchar1:hover,
+.dia24-escuchar2:hover {
+  background: #F3E6D8;
+}
+
+/* BOTÓN ANTES DE TERMINAR */
+
+.dia24-boton {
+  margin-top: 12px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #813D4A;
+  color: #FFF9F0;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.dia24-boton:hover {
+  background: #65303B;
+  transform: translateY(-2px);
+}
+
+/* MENSAJE FINAL */
+
+.dia24-carta-final .dia24-sorpresa {
+  margin: 28px 0 18px;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #813D4A;
+}
+
+.dia24-carta-final .dia24-secreto {
+  font-size: 24px;
+  font-style: italic;
+  color: #813D4A;
+}
+
+.dia24-carta-final .dia24-teamo {
+  margin: 20px 0;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #813D4A;
+}
+
+/* TRANSICIÓN ENTRE CARTAS */
+
+.dia24-saliendo {
+  animation: dia24Salir .45s ease forwards;
+}
+
+.dia24-entrando {
+  animation: dia24Entrar .8s ease both;
+}
+
+@keyframes dia24Salir {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes dia24Entrar {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 400px) {
+  .dia24-carta-inicial,
+  .dia24-carta-final {
+    padding: 28px 18px;
+  }
+
+  .dia24-carta-inicial p,
+  .dia24-carta-final p {
+    font-size: 21px;
+  }
+
+  .dia24-carta-final .dia24-sorpresa {
+    font-size: 24px;
+  }
+}
